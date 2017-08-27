@@ -13,10 +13,17 @@ class ViewController: UIViewController {
     @IBOutlet var feel: UISegmentedControl!
     @IBOutlet var destWx: UISegmentedControl!
     @IBOutlet var total: UILabel!
+    @IBOutlet var risk: UILabel!
     
     let SLEEP = 0
     let FEEL = 1
     let DESTWX = 2
+    
+    enum FlightRisk {
+        case notComplex
+        case caution
+        case concern
+    }
     
     let factors : [[Int]] = [[2,0], [4,0,2], [1,3,4]]
 
@@ -40,10 +47,29 @@ class ViewController: UIViewController {
     }
     func updateScore() -> () {
         total.text = String(calcScore())
+        switch computeFlightRisk() {
+        case .notComplex:
+            risk.text = "Not Complex"
+        case .caution:
+            risk.text = "Exercise Caution"
+        case .concern:
+            risk.text = "Area of Concern"
+        }
     }
     
     func calcScore() -> Int {
         return factors[SLEEP][sleep.selectedSegmentIndex] + factors[FEEL][feel.selectedSegmentIndex] + factors[DESTWX][destWx.selectedSegmentIndex]
+    }
+    
+    func computeFlightRisk() -> FlightRisk {
+        switch calcScore() {
+        case 0...10:
+            return .notComplex
+        case 11...20:
+            return .caution
+        default:
+            return .concern
+        }
     }
 
 }
