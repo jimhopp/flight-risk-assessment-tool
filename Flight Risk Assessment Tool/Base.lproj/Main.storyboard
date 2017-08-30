@@ -91,6 +91,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Planning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVo-h0-jco">
+                                <rect key="frame" x="16" y="417" width="56" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Verified weight &amp; balance?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpV-1g-pMF">
+                                <rect key="frame" x="26" y="497" width="218" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Evaluated performance?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdD-dL-ZxS">
+                                <rect key="frame" x="26" y="535" width="218" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Briefed pax?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wf-OE-euV">
+                                <rect key="frame" x="26" y="572" width="218" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(Score)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYv-Lz-ciB">
                                 <rect key="frame" x="150" y="585" width="84" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -141,6 +169,52 @@
                                     <action selector="somethingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="a4h-Vg-bMi"/>
                                 </connections>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1Lb-z9-zwT">
+                                <rect key="frame" x="72" y="389" width="293" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Rushed to get off"/>
+                                    <segment title="No hurry"/>
+                                </segments>
+                                <connections>
+                                    <action selector="somethingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="OLs-OM-qUz"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="A26-6a-HYw">
+                                <rect key="frame" x="72" y="443" width="293" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Used charts &amp; computer"/>
+                                    <segment title="Computer only"/>
+                                </segments>
+                                <connections>
+                                    <action selector="somethingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="R5R-ls-LbW"/>
+                                </connections>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rTc-i6-okG">
+                                <rect key="frame" x="298" y="492" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="WB"/>
+                                <connections>
+                                    <action selector="somethingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="nOM-zL-gvs"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g6e-EG-TQP">
+                                <rect key="frame" x="298" y="530" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="PERF"/>
+                                <connections>
+                                    <action selector="somethingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZIz-Rp-X0T"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tbF-Tp-Kqn">
+                                <rect key="frame" x="298" y="567" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="PAX"/>
+                                <connections>
+                                    <action selector="somethingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="a69-bK-e6T"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -149,9 +223,14 @@
                         <outlet property="destWx" destination="602-As-jr9" id="oZD-CT-q1f"/>
                         <outlet property="feel" destination="9TB-QC-KrO" id="bY9-1O-Pb9"/>
                         <outlet property="flight" destination="baC-W8-uPR" id="sRP-W7-tNP"/>
+                        <outlet property="pax" destination="tbF-Tp-Kqn" id="URJ-9A-ETO"/>
+                        <outlet property="perf" destination="g6e-EG-TQP" id="eC1-C6-Wzc"/>
+                        <outlet property="planning" destination="A26-6a-HYw" id="DfV-4U-jUs"/>
+                        <outlet property="preflight" destination="1Lb-z9-zwT" id="dhr-jQ-XJB"/>
                         <outlet property="risk" destination="cFe-Lw-2b3" id="VXr-Az-aYg"/>
                         <outlet property="sleep" destination="eTH-0U-3zP" id="FNn-3K-y8H"/>
                         <outlet property="total" destination="NYv-Lz-ciB" id="cbN-wD-zDq"/>
+                        <outlet property="wb" destination="rTc-i6-okG" id="h0p-TV-sMv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
