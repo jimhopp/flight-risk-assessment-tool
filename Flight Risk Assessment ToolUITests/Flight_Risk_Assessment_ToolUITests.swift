@@ -75,7 +75,7 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
         XCUIApplication().segmentedControls.buttons["Super VFR"].tap()
         XCTAssertTrue(XCUIApplication().staticTexts["7"].exists,
                       "Score not correct")
-        XCTAssertTrue(XCUIApplication().staticTexts["Worthy of Consideration"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
                       "Risk not correct")
         
         XCUIApplication().segmentedControls.buttons["Marginal VFR"].tap()
