@@ -39,4 +39,9 @@ class Flight_Risk_Assessment_ToolTests: XCTestCase {
         XCTAssertEqual(3, self.viewController.factors[2][1], "marg. vmc dest wx factor wrong")
         XCTAssertEqual(4, self.viewController.factors[2][2], "imc dest wx factor wrong")
     }
+
+    func testDay() {
+        XCTAssertEqual(3, self.viewController.factors[3][0], "bad day factor wrong")
+        XCTAssertEqual(3, self.viewController.factors[3][0], "great day factor wrong")
+    }
 }
