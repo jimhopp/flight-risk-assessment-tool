@@ -9,7 +9,7 @@
 import XCTest
 
 class Flight_Risk_Assessment_ToolUITests: XCTestCase {
-        
+    
     override func setUp() {
         super.setUp()
         
@@ -28,9 +28,24 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testInitialState() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        //XCUIApplication().buttons["Slept well"].tap()
+        XCTAssertTrue(XCUIApplication().staticTexts["7"].exists,
+                       "Initial score not correct")
+        XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
+                      "Initial risk not correct")
+        
     }
+    
+    func testSleptWell() {
+        XCUIApplication().buttons["Slept well"].tap()
+        XCTAssertTrue(XCUIApplication().staticTexts["5"].exists,
+                      "Score not correct")
+        XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
+                      "Risk not correct")
+    }
+
     
 }

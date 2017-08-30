@@ -11,6 +11,8 @@ import XCTest
 
 class Flight_Risk_Assessment_ToolTests: XCTestCase {
     
+    var viewController = ViewController()
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,16 +23,20 @@ class Flight_Risk_Assessment_ToolTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSleep() {
+        XCTAssertEqual(2, self.viewController.factors[0][0], "Poor sleep factor wrong")
+        XCTAssertEqual(0, self.viewController.factors[0][1], "Good sleep factor wrong")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testFeel() {
+        XCTAssertEqual(4, self.viewController.factors[1][0], "'cold' feel factor wrong")
+        XCTAssertEqual(0, self.viewController.factors[1][1], "'great' feel factor wrong")
+        XCTAssertEqual(2, self.viewController.factors[1][2], "'bit off' feel factor wrong")
     }
     
+    func testDestWx() {
+        XCTAssertEqual(1, self.viewController.factors[2][0], "super vmc dest wx factor wrong")
+        XCTAssertEqual(3, self.viewController.factors[2][1], "marg. vmc dest wx factor wrong")
+        XCTAssertEqual(4, self.viewController.factors[2][2], "imc dest wx factor wrong")
+    }
 }
