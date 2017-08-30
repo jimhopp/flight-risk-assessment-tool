@@ -44,4 +44,9 @@ class Flight_Risk_Assessment_ToolTests: XCTestCase {
         XCTAssertEqual(3, self.viewController.factors[3][0], "bad day factor wrong")
         XCTAssertEqual(3, self.viewController.factors[3][0], "great day factor wrong")
     }
+
+    func testFlight() {
+        XCTAssertEqual(1, self.viewController.factors[4][0], "'day flight factor wrong")
+        XCTAssertEqual(3, self.viewController.factors[4][1], "'night' flight factor wrong")
+    }
 }

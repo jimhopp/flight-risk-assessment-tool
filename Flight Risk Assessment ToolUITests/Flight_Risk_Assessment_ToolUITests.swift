@@ -29,43 +29,43 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
     
     func testInitialState() {
-        XCTAssertTrue(XCUIApplication().staticTexts["10"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["11"].exists,
                        "Initial score not correct")
-        XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["Exercise Caution"].exists,
                       "Initial risk not correct")
         
     }
     
     func testSleep() {
         XCUIApplication().segmentedControls.buttons["Slept well"].tap()
-        XCTAssertTrue(XCUIApplication().staticTexts["8"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["9"].exists,
                       "Score not correct")
         XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
                       "Risk not correct")
         
         XCUIApplication().segmentedControls.buttons["Not well or < 8 hrs"].tap()
-        XCTAssertTrue(XCUIApplication().staticTexts["10"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["11"].exists,
                       "Score not correct")
-        XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["Exercise Caution"].exists,
                       "Risk not correct")
 
     }
     
     func testFeel() {
         XCUIApplication().segmentedControls.buttons["Have cold/ill"].tap()
-        XCTAssertTrue(XCUIApplication().staticTexts["10"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["11"].exists,
                       "Score not correct")
-        XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["Exercise Caution"].exists,
                       "Risk not correct")
         
         XCUIApplication().segmentedControls.buttons["Great!"].tap()
-        XCTAssertTrue(XCUIApplication().staticTexts["6"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["7"].exists,
                       "Score not correct")
         XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
                       "Risk not correct")
         
         XCUIApplication().segmentedControls.buttons["A bit off"].tap()
-        XCTAssertTrue(XCUIApplication().staticTexts["8"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["9"].exists,
                       "Score not correct")
         XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
                       "Risk not correct")
@@ -73,19 +73,19 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     
     func testDestWx() {
         XCUIApplication().segmentedControls.buttons["Super VFR"].tap()
-        XCTAssertTrue(XCUIApplication().staticTexts["10"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["11"].exists,
                       "Score not correct")
-        XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["Exercise Caution"].exists,
                       "Risk not correct")
         
         XCUIApplication().segmentedControls.buttons["Marginal VFR"].tap()
-        XCTAssertTrue(XCUIApplication().staticTexts["12"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["13"].exists,
                       "Score not correct")
         XCTAssertTrue(XCUIApplication().staticTexts["Exercise Caution"].exists,
                       "Risk not correct")
         
         XCUIApplication().segmentedControls.buttons["Not VFR"].tap()
-        XCTAssertTrue(XCUIApplication().staticTexts["13"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["14"].exists,
                       "Score not correct")
         XCTAssertTrue(XCUIApplication().staticTexts["Exercise Caution"].exists,
                       "Risk not correct")
@@ -93,16 +93,55 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     
     func testDay() {
         XCUIApplication().segmentedControls.buttons["Nothing going right"].tap()
-        XCTAssertTrue(XCUIApplication().staticTexts["10"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["11"].exists,
                       "Score not correct")
-        XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["Exercise Caution"].exists,
                       "Risk not correct")
         
         XCUIApplication().segmentedControls.buttons["Great day"].tap()
-        XCTAssertTrue(XCUIApplication().staticTexts["7"].exists,
+        XCTAssertTrue(XCUIApplication().staticTexts["8"].exists,
                       "Score not correct")
         XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
                       "Risk not correct")
         
+    }
+
+    func testFlight() {
+        XCUIApplication().segmentedControls.buttons["Day"].tap()
+        XCTAssertTrue(XCUIApplication().staticTexts["11"].exists,
+                      "Score not correct")
+        XCTAssertTrue(XCUIApplication().staticTexts["Exercise Caution"].exists,
+                      "Risk not correct")
+        
+        XCUIApplication().segmentedControls.buttons["Night"].tap()
+        XCTAssertTrue(XCUIApplication().staticTexts["13"].exists,
+                      "Score not correct")
+        XCTAssertTrue(XCUIApplication().staticTexts["Exercise Caution"].exists,
+                      "Risk not correct")
+        
+    }
+    
+    func testLowestRisk() {
+        XCUIApplication().segmentedControls.buttons["Slept well"].tap()
+        XCUIApplication().segmentedControls.buttons["Great!"].tap()
+        XCUIApplication().segmentedControls.buttons["Super VFR"].tap()
+        XCUIApplication().segmentedControls.buttons["Great day"].tap()
+        XCUIApplication().segmentedControls.buttons["Day"].tap()
+        XCTAssertTrue(XCUIApplication().staticTexts["2"].exists,
+                      "Score not correct")
+        XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
+                      "Risk not correct")
+    }
+
+    func testHighestRisk() {
+        XCUIApplication().segmentedControls.buttons["Not well or < 8 hrs"].tap()
+        XCUIApplication().segmentedControls.buttons["Have cold/ill"].tap()
+        XCUIApplication().segmentedControls.buttons["Not VFR"].tap()
+        XCUIApplication().segmentedControls.buttons["Nothing going right"].tap()
+        XCUIApplication().segmentedControls.buttons["Night"].tap()
+        XCTAssertTrue(XCUIApplication().staticTexts["16"].exists,
+                      "Score not correct")
+        XCTAssertTrue(XCUIApplication().staticTexts["Exercise Caution"].exists,
+                      "Risk not correct")
     }
 }
