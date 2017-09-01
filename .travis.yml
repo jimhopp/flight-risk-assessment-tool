@@ -1,3 +1,4 @@
+sudo: false
 language: objective-c
 osx_image: xcode8.3
 xcode_project: Flight\ Risk\ Assessment\ Tool.xcodeproj # path to your xcodeproj folder
