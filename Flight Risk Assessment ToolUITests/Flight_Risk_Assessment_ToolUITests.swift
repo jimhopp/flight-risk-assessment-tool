@@ -184,6 +184,16 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
         XCUIApplication().segmentedControls.buttons["No hurry"].tap()
         XCUIApplication().segmentedControls.buttons["Used charts & computer"].tap()
         
+        if (XCUIApplication().switches["WB"].value as? String) == "0" {
+            XCUIApplication().switches["WB"].tap()
+        }
+        if (XCUIApplication().switches["PERF"].value as? String) == "0" {
+            XCUIApplication().switches["PERF"].tap()
+        }
+        if (XCUIApplication().switches["PAX"].value as? String) == "0" {
+            XCUIApplication().switches["PAX"].tap()
+        }
+
         XCTAssertTrue(XCUIApplication().staticTexts["3"].exists,
                       "Score not correct")
         XCTAssertTrue(XCUIApplication().staticTexts["Not Complex"].exists,
@@ -198,10 +208,17 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
         XCUIApplication().segmentedControls.buttons["Night"].tap()
         XCUIApplication().segmentedControls.buttons["Rushed to get off"].tap()
         XCUIApplication().segmentedControls.buttons["Computer only"].tap()
-        XCUIApplication().switches["WB"].swipeLeft()
-        XCUIApplication().switches["PERF"].swipeLeft()
-        XCUIApplication().switches["PAX"].swipeLeft()
-
+        
+        if (XCUIApplication().switches["WB"].value as? String) == "1" {
+            XCUIApplication().switches["WB"].tap()
+        }
+        if (XCUIApplication().switches["PERF"].value as? String) == "1" {
+            XCUIApplication().switches["PERF"].tap()
+        }
+        if (XCUIApplication().switches["PAX"].value as? String) == "1" {
+        XCUIApplication().switches["PAX"].tap()
+        }
+        
         XCTAssertTrue(XCUIApplication().staticTexts["30"].exists,
                       "Score not correct")
         XCTAssertTrue(XCUIApplication().staticTexts["Area of Concern"].exists,
