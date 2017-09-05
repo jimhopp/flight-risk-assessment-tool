@@ -514,6 +514,7 @@
 				866703611F47A12E00CA235D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		866703621F47A12E00CA235D /* Build configuration list for PBXNativeTarget "Flight Risk Assessment ToolTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +523,7 @@
 				866703641F47A12E00CA235D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		866703651F47A12E00CA235D /* Build configuration list for PBXNativeTarget "Flight Risk Assessment ToolUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +532,7 @@
 				866703671F47A12E00CA235D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
