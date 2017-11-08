@@ -11,7 +11,7 @@ import XCTest
 
 class Flight_Risk_Assessment_ToolTests: XCTestCase {
     
-    var viewController = ViewController()
+    var viewController = RiskViewController()
     
     override func setUp() {
         super.setUp()
@@ -76,23 +76,23 @@ class Flight_Risk_Assessment_ToolTests: XCTestCase {
     }
     
     func testNoConcern() {
-        XCTAssertEqual(ViewController.FlightRisk.notComplex, ViewController.computeFlightRisk(0), "'not complex' lower bound wrong")
-        XCTAssertEqual(ViewController.FlightRisk.notComplex, ViewController.computeFlightRisk(10), "'not complex' upper bound wrong")
+        XCTAssertEqual(RiskViewController.FlightRisk.notComplex, RiskViewController.computeFlightRisk(0), "'not complex' lower bound wrong")
+        XCTAssertEqual(RiskViewController.FlightRisk.notComplex, RiskViewController.computeFlightRisk(10), "'not complex' upper bound wrong")
     }
 
     func testCaution() {
-        XCTAssertEqual(ViewController.FlightRisk.caution, ViewController.computeFlightRisk(11), "'caution' lower bound wrong")
-        XCTAssertEqual(ViewController.FlightRisk.caution, ViewController.computeFlightRisk(20), "'caution' upper bound wrong")
+        XCTAssertEqual(RiskViewController.FlightRisk.caution, RiskViewController.computeFlightRisk(11), "'caution' lower bound wrong")
+        XCTAssertEqual(RiskViewController.FlightRisk.caution, RiskViewController.computeFlightRisk(20), "'caution' upper bound wrong")
     }
     
     func testConcern() {
-        XCTAssertEqual(ViewController.FlightRisk.concern, ViewController.computeFlightRisk(21), "'concern' lower bound wrong")
-        XCTAssertEqual(ViewController.FlightRisk.concern, ViewController.computeFlightRisk(30), "'concern' upper bound wrong")
+        XCTAssertEqual(RiskViewController.FlightRisk.concern, RiskViewController.computeFlightRisk(21), "'concern' lower bound wrong")
+        XCTAssertEqual(RiskViewController.FlightRisk.concern, RiskViewController.computeFlightRisk(30), "'concern' upper bound wrong")
     }
     
     func testOutofRange() {
-        XCTAssertEqual(ViewController.FlightRisk.concern, ViewController.computeFlightRisk(-1), "out of range score wrong")
-        XCTAssertEqual(ViewController.FlightRisk.concern, ViewController.computeFlightRisk(31), "out of range wrong")
-        XCTAssertEqual(ViewController.FlightRisk.concern, ViewController.computeFlightRisk(1000000), "out of range wrong")
+        XCTAssertEqual(RiskViewController.FlightRisk.concern, RiskViewController.computeFlightRisk(-1), "out of range score wrong")
+        XCTAssertEqual(RiskViewController.FlightRisk.concern, RiskViewController.computeFlightRisk(31), "out of range wrong")
+        XCTAssertEqual(RiskViewController.FlightRisk.concern, RiskViewController.computeFlightRisk(1000000), "out of range wrong")
     }
 }

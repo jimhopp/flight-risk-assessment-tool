@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86062F401FBB201700122D78 /* PersonalMinimumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86062F3F1FBB201700122D78 /* PersonalMinimumsViewController.swift */; };
+		8635BE261FC59B3F00AE85C5 /* PersonalMinimums_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8635BE251FC59B3F00AE85C5 /* PersonalMinimums_Tests.swift */; };
+		8635BE281FC5A6FC00AE85C5 /* PersonalMinimumsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8635BE271FC5A6FC00AE85C5 /* PersonalMinimumsUITests.swift */; };
 		8667033B1F47A12D00CA235D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667033A1F47A12D00CA235D /* AppDelegate.swift */; };
-		8667033D1F47A12D00CA235D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667033C1F47A12D00CA235D /* ViewController.swift */; };
+		8667033D1F47A12D00CA235D /* RiskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667033C1F47A12D00CA235D /* RiskViewController.swift */; };
 		866703401F47A12D00CA235D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8667033E1F47A12D00CA235D /* Main.storyboard */; };
 		866703421F47A12D00CA235D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866703411F47A12D00CA235D /* Assets.xcassets */; };
 		866703451F47A12D00CA235D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866703431F47A12D00CA235D /* LaunchScreen.storyboard */; };
@@ -34,9 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		86062F3F1FBB201700122D78 /* PersonalMinimumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalMinimumsViewController.swift; sourceTree = "<group>"; };
+		8635BE251FC59B3F00AE85C5 /* PersonalMinimums_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalMinimums_Tests.swift; sourceTree = "<group>"; };
+		8635BE271FC5A6FC00AE85C5 /* PersonalMinimumsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalMinimumsUITests.swift; sourceTree = "<group>"; };
 		866703371F47A12D00CA235D /* Flight Risk Assessment Tool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flight Risk Assessment Tool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8667033A1F47A12D00CA235D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8667033C1F47A12D00CA235D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8667033C1F47A12D00CA235D /* RiskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskViewController.swift; sourceTree = "<group>"; };
 		8667033F1F47A12D00CA235D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		866703411F47A12D00CA235D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		866703441F47A12D00CA235D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				8667033A1F47A12D00CA235D /* AppDelegate.swift */,
-				8667033C1F47A12D00CA235D /* ViewController.swift */,
+				8667033C1F47A12D00CA235D /* RiskViewController.swift */,
+				86062F3F1FBB201700122D78 /* PersonalMinimumsViewController.swift */,
 				8667033E1F47A12D00CA235D /* Main.storyboard */,
 				866703411F47A12D00CA235D /* Assets.xcassets */,
 				866703431F47A12D00CA235D /* LaunchScreen.storyboard */,
@@ -111,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				8667034F1F47A12E00CA235D /* Flight_Risk_Assessment_ToolTests.swift */,
+				8635BE251FC59B3F00AE85C5 /* PersonalMinimums_Tests.swift */,
 				866703511F47A12E00CA235D /* Info.plist */,
 			);
 			path = "Flight Risk Assessment ToolTests";
@@ -120,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8667035A1F47A12E00CA235D /* Flight_Risk_Assessment_ToolUITests.swift */,
+				8635BE271FC5A6FC00AE85C5 /* PersonalMinimumsUITests.swift */,
 				8667035C1F47A12E00CA235D /* Info.plist */,
 			);
 			path = "Flight Risk Assessment ToolUITests";
@@ -262,8 +271,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8667033D1F47A12D00CA235D /* ViewController.swift in Sources */,
+				8667033D1F47A12D00CA235D /* RiskViewController.swift in Sources */,
 				8667033B1F47A12D00CA235D /* AppDelegate.swift in Sources */,
+				86062F401FBB201700122D78 /* PersonalMinimumsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8635BE261FC59B3F00AE85C5 /* PersonalMinimums_Tests.swift in Sources */,
 				866703501F47A12E00CA235D /* Flight_Risk_Assessment_ToolTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8635BE281FC5A6FC00AE85C5 /* PersonalMinimumsUITests.swift in Sources */,
 				8667035B1F47A12E00CA235D /* Flight_Risk_Assessment_ToolUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

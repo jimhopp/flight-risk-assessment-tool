@@ -53,11 +53,15 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
     
     func testInitialState() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         XCTAssertEqual("14", getScore(), "wrong score")
         XCTAssertEqual("Exercise Caution", getRisk(), "risk not correct")
     }
     
     func testSleep() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         XCUIApplication().segmentedControls.buttons["Slept well"].tap()
         
         XCTAssertEqual("12", getScore(), "wrong score")
@@ -69,6 +73,8 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
     
     func testFeel() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         XCUIApplication().segmentedControls.buttons["Have cold/ill"].tap()
         XCTAssertEqual("14", getScore(), "Score not correct")
         XCTAssertEqual("Exercise Caution", getRisk(), "Risk not correct")
@@ -83,6 +89,8 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
     
     func testDestWx() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         XCUIApplication().segmentedControls.buttons["Super VFR"].tap()
         XCTAssertEqual("14", getScore(), "wrong score")
         XCTAssertEqual("Exercise Caution", getRisk(), "risk not correct")
@@ -97,6 +105,8 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
     
     func testDay() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         XCUIApplication().segmentedControls.buttons["Nothing going right"].tap()
         XCTAssertEqual("14", getScore(), "wrong score")
         XCTAssertEqual("Exercise Caution", getRisk(), "risk not correct")
@@ -108,6 +118,8 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
 
     func testFlight() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         XCUIApplication().segmentedControls.buttons["Day"].tap()
         XCTAssertEqual("14", getScore(), "wrong score")
         XCTAssertEqual("Exercise Caution", getRisk(), "risk not correct")
@@ -119,6 +131,8 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
     
     func testPreflight() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         XCUIApplication().segmentedControls.buttons["Rushed to get off"].tap()
         XCTAssertEqual("14", getScore(), "wrong score")
         XCTAssertEqual("Exercise Caution", getRisk(), "risk not correct")
@@ -130,6 +144,8 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
 
     func testPlanning() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         XCUIApplication().segmentedControls.buttons["Used charts & computer"].tap()
         XCTAssertEqual("14", getScore(), "wrong score")
         XCTAssertEqual("Exercise Caution", getRisk(), "risk not correct")
@@ -141,6 +157,8 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
 
     func testWeightAndBalance() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         turnOnSwitch("WB")
         XCTAssertEqual("14", getScore(), "wrong score")
         XCTAssertEqual("Exercise Caution", getRisk(), "risk not correct")
@@ -151,6 +169,8 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
 
     func testPerf() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         turnOnSwitch("PERF")
         XCTAssertEqual("14", getScore(), "wrong score")
         XCTAssertEqual("Exercise Caution", getRisk(), "risk not correct")
@@ -161,6 +181,8 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
 
     func testPaxBriefing() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         turnOnSwitch("PAX")
         XCTAssertEqual("14", getScore(), "wrong score")
         XCTAssertEqual("Exercise Caution", getRisk(), "risk not correct")
@@ -171,6 +193,8 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
     
     func testLowestRisk() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         XCUIApplication().segmentedControls.buttons["Slept well"].tap()
         XCUIApplication().segmentedControls.buttons["Great!"].tap()
         XCUIApplication().segmentedControls.buttons["Super VFR"].tap()
@@ -188,6 +212,8 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
     }
 
     func testHighestRisk() {
+        XCUIApplication().tabBars.buttons["Risk"].tap()
+        
         XCUIApplication().segmentedControls.buttons["Not well or < 8 hrs"].tap()
         XCUIApplication().segmentedControls.buttons["Have cold/ill"].tap()
         XCUIApplication().segmentedControls.buttons["Not VFR"].tap()
@@ -202,5 +228,5 @@ class Flight_Risk_Assessment_ToolUITests: XCTestCase {
         
         XCTAssertEqual("30", getScore(), "wrong score")
         XCTAssertEqual("Area of Concern", getRisk(), "risk not correct")
-    }
+    }    
 }

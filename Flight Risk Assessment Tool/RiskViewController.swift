@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RiskViewController: UIViewController {
     @IBOutlet var sleep: UISegmentedControl!
     @IBOutlet var feel: UISegmentedControl!
     @IBOutlet var destWx: UISegmentedControl!
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         let score = calcScore()
         total.text = String(score)
         
-        switch ViewController.computeFlightRisk(score) {
+        switch RiskViewController.computeFlightRisk(score) {
         case .notComplex:
             risk.text = "Not Complex"
         case .caution:
