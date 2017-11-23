@@ -28,32 +28,41 @@ class PersonalMinimumsUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testCeilingDayisSaved() {
+    func testValuesSavedBetweenStarts() {
         
         let app = XCUIApplication()
-        var textField = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element(boundBy: 0)
-        textField.tap()
+        var element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
         
-        if let currString = textField.value as? String {
-            let deleteString = currString.map {_ in XCUIKeyboardKeyDelete}.joined(separator: "")
-            textField.typeText(deleteString)
+        let mins: [(String, String)] = [("ceiling.day", "1500"), ("ceiling.night", "3000"),
+        ("viz.day", "5"), ("viz.night", "8")]
+        
+        for (i, min) in mins.enumerated() {
+            let textField = element.children(matching: .textField).element(boundBy: UInt(i))
+            textField.tap()
+            if let currString = textField.value as? String {
+                let deleteString = currString.map {_ in XCUIKeyboardKeyDelete}.joined(separator: "")
+                textField.typeText(deleteString)
+            }
+            textField.typeText(min.1)
         }
-        
-        textField.typeText("1500")
+     
         app/*@START_MENU_TOKEN@*/.keyboards.buttons["Done"]/*[[".keyboards.buttons[\"Done\"]",".buttons[\"Done\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.tap()
         
-        XCTAssertEqual(textField.value as? String, "1500", "ceiling.day not set to 1500")
-        
+        for (i, min) in mins.enumerated() {
+            let textField = element.children(matching: .textField).element(boundBy: UInt(i))
+            XCTAssertEqual(textField.value as? String, min.1, "\(min.0) not set to \(min.1)")
+        }
+     
         XCUIDevice().press(.home)
         XCTAssertTrue(app.wait(for: .runningBackgroundSuspended, timeout: 10.0))
         app.terminate()
         app.activate()
         XCTAssertTrue(app.wait(for: .runningForeground, timeout: 10.0))
         
-        textField = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element(boundBy: 0)
-        
-        XCTAssertEqual(textField.value as? String, "1500", "ceiling.day value not preserved between restarts")
-        
+        element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        for (i, min) in mins.enumerated() {
+            let textField = element.children(matching: .textField).element(boundBy: (UInt(i)))
+            XCTAssertEqual(textField.value as? String, min.1, "\(min.0) not restored as \(min.1)")
+        }
     }
-    
 }
