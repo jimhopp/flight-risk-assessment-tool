@@ -14,7 +14,9 @@ class PersonalMinimumsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var vizDay: UITextField!
     @IBOutlet var ceilingNight: UITextField!
     @IBOutlet var vizNight: UITextField!
-    
+    @IBOutlet var wind: UITextField!
+    @IBOutlet var xwind: UITextField!
+
     static var mins = [String: String]()
 
     override func viewDidLoad() {
@@ -24,13 +26,15 @@ class PersonalMinimumsViewController: UIViewController, UITextFieldDelegate {
         vizDay.text = PersonalMinimumsViewController.mins["visibility.day"]
         ceilingNight.text = PersonalMinimumsViewController.mins["ceiling.night"]
         vizNight.text = PersonalMinimumsViewController.mins["visibility.night"]
-        
+        wind.text = PersonalMinimumsViewController.mins["surfacewind"]
+        xwind.text = PersonalMinimumsViewController.mins["crosswind"]
+
         ceilingDay.delegate = self
         ceilingNight.delegate = self
         vizDay.delegate = self
         vizNight.delegate = self
-        
-        // Do any additional setup after loading the view.
+        wind.delegate = self
+        xwind.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,6 +74,14 @@ class PersonalMinimumsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func visibilityNightChanged(_ sender: Any) {
         PersonalMinimumsViewController.mins["visibility.night"] = vizNight.text
+    }
+    
+    @IBAction func surfaceWindChanged(_ sender: Any) {
+        PersonalMinimumsViewController.mins["surfacewind"] = wind.text
+    }
+    
+    @IBAction func crosswindChanged(_ sender: Any) {
+        PersonalMinimumsViewController.mins["crosswind"] = xwind.text
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
