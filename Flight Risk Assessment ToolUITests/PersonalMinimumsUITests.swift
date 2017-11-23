@@ -34,7 +34,8 @@ class PersonalMinimumsUITests: XCTestCase {
         var element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
         
         let mins: [(String, String)] = [("ceiling.day", "1500"), ("ceiling.night", "3000"),
-        ("viz.day", "5"), ("viz.night", "8"), ("surfacewind", "25"),("crosswind", "15")]
+        ("viz.day", "5"), ("viz.night", "8"), ("surfacewind", "25"),("crosswind", "15"),
+        ("runway length", "2400"), ("field elevation", "7500"), ("density altitude", "8000")]
         
         for (i, min) in mins.enumerated() {
             let textField = element.children(matching: .textField).element(boundBy: UInt(i))

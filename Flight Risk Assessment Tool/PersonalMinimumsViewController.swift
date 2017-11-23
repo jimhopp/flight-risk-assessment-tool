@@ -16,6 +16,9 @@ class PersonalMinimumsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var vizNight: UITextField!
     @IBOutlet var wind: UITextField!
     @IBOutlet var xwind: UITextField!
+    @IBOutlet var runway: UITextField!
+    @IBOutlet var elevation: UITextField!
+    @IBOutlet var densityAlt: UITextField!
 
     static var mins = [String: String]()
 
@@ -28,6 +31,9 @@ class PersonalMinimumsViewController: UIViewController, UITextFieldDelegate {
         vizNight.text = PersonalMinimumsViewController.mins["visibility.night"]
         wind.text = PersonalMinimumsViewController.mins["surfacewind"]
         xwind.text = PersonalMinimumsViewController.mins["crosswind"]
+        runway.text = PersonalMinimumsViewController.mins["runwaylen"]
+        elevation.text = PersonalMinimumsViewController.mins["fieldelevation"]
+        densityAlt.text = PersonalMinimumsViewController.mins["densityaltitude"]
 
         ceilingDay.delegate = self
         ceilingNight.delegate = self
@@ -35,6 +41,9 @@ class PersonalMinimumsViewController: UIViewController, UITextFieldDelegate {
         vizNight.delegate = self
         wind.delegate = self
         xwind.delegate = self
+        runway.delegate = self
+        elevation.delegate = self
+        densityAlt.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,6 +91,18 @@ class PersonalMinimumsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func crosswindChanged(_ sender: Any) {
         PersonalMinimumsViewController.mins["crosswind"] = xwind.text
+    }
+    
+    @IBAction func runwayLenChanged(_ sender: Any) {
+        PersonalMinimumsViewController.mins["runwaylen"] = runway.text
+    }
+    
+    @IBAction func elevationChanged(_ sender: Any) {
+        PersonalMinimumsViewController.mins["fieldelevation"] = elevation.text
+    }
+    
+    @IBAction func densityAltChanged(_ sender: Any) {
+        PersonalMinimumsViewController.mins["densityaltitude"] = densityAlt.text
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
