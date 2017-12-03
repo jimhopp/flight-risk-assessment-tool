@@ -206,6 +206,7 @@
                     <connections>
                         <segue destination="uVf-C0-vkf" kind="relationship" relationship="viewControllers" id="isT-NZ-hTN"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="pVR-uW-0IW"/>
+                        <segue destination="QjA-g9-cOr" kind="relationship" relationship="viewControllers" id="7au-jm-HPS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FuZ-6X-6UE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -423,7 +424,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Risk" id="UOw-4H-Asf"/>
+                    <tabBarItem key="tabBarItem" title="Flight Risk" id="UOw-4H-Asf"/>
                     <connections>
                         <outlet property="day" destination="OhL-3F-KWb" id="ViX-DD-rH6"/>
                         <outlet property="destWx" destination="602-As-jr9" id="oZD-CT-q1f"/>
@@ -442,6 +443,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-311" y="258"/>
+        </scene>
+        <!--ADM-->
+        <scene sceneID="GV2-hX-1gv">
+            <objects>
+                <viewController title="ADM" id="QjA-g9-cOr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B2t-b6-qrm"/>
+                        <viewControllerLayoutGuide type="bottom" id="Biw-jH-dqd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f9V-ib-gy4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nh6-la-Qts">
+                                <rect key="frame" x="16" y="71" width="343" height="515"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">More on ADM at https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/media/FAA-H-8083-2.pdf
+
+Pilot
+Aircraft
+enVironment
+External Pressures
+
+Single-Pilot Resource Management
+
+"The Five Ps"
+Plan
+Plane
+Pilot
+Passengers
+Programming</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="ADM" id="LM2-L6-Wg5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="91y-xh-RCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-682.39999999999998" y="929.68515742128943"/>
         </scene>
     </scenes>
 </document>
