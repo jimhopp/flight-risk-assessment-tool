@@ -447,7 +447,7 @@
         <!--ADM-->
         <scene sceneID="GV2-hX-1gv">
             <objects>
-                <viewController title="ADM" id="QjA-g9-cOr" sceneMemberID="viewController">
+                <viewController title="ADM" id="QjA-g9-cOr" customClass="ADMViewController" customModule="Flight_Risk_Assessment_Tool" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B2t-b6-qrm"/>
                         <viewControllerLayoutGuide type="bottom" id="Biw-jH-dqd"/>
@@ -455,38 +455,6 @@
                     <view key="view" contentMode="scaleToFill" id="f9V-ib-gy4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nh6-la-Qts">
-                                <rect key="frame" x="16" y="71" width="343" height="515"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">More on ADM at https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/media/FAA-H-8083-2.pdf
-
-Pilot
-Aircraft
-enVironment
-External Pressures
-
-Single-Pilot Resource Management
-
-"The Five Ps"
-Plan
-Plane
-Pilot
-Passengers
-Programming</string>
-                                        <attributes>
-                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="ADM" id="LM2-L6-Wg5"/>
