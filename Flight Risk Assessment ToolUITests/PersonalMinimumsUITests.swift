@@ -21,11 +21,21 @@ class PersonalMinimumsUITests: XCTestCase {
         XCUIApplication().launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        XCUIDevice.shared().orientation = .portrait
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func testLandscape() {
+        XCUIDevice.shared().orientation = .landscapeRight
+        
+        let textField = XCUIApplication().children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element(boundBy: 8)
+        
+        XCTAssertTrue(textField.isHittable, "field not visible in landscape")
+        
     }
     
     func testValuesSavedBetweenStarts() {

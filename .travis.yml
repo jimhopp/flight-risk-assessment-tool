@@ -3,4 +3,5 @@ language: objective-c
 osx_image: xcode9.1
 xcode_project: Flight\ Risk\ Assessment\ Tool.xcodeproj # path to your xcodeproj folder
 script:
-        - ./bin/test.sh
+        - ./bin/testiphone.sh
+        - ./bin/testipad.sh
