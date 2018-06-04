@@ -72,7 +72,10 @@ class RiskViewController: UIViewController {
     }
     
     func calcScore() -> Int {
-        return factors[SLEEP][sleep.selectedSegmentIndex] + factors[FEEL][feel.selectedSegmentIndex] + factors[DESTWX][destWx.selectedSegmentIndex] + factors[DAY][day.selectedSegmentIndex] + factors[FLIGHT][flight.selectedSegmentIndex] + factors[PREFLIGHT][preflight.selectedSegmentIndex] + factors[PLANNING][planning.selectedSegmentIndex] + factors[WB][wb.isOn ? 0 : 1] + factors[PERF][perf.isOn ? 0 : 1] + factors[PAX][pax.isOn ? 0 : 1]
+        let p = factors[SLEEP][sleep.selectedSegmentIndex] + factors[FEEL][feel.selectedSegmentIndex]
+        let v = factors[DESTWX][destWx.selectedSegmentIndex] + factors[DAY][day.selectedSegmentIndex] + factors[FLIGHT][flight.selectedSegmentIndex]
+        let e = factors[PREFLIGHT][preflight.selectedSegmentIndex] + factors[PLANNING][planning.selectedSegmentIndex] + factors[WB][wb.isOn ? 0 : 1] + factors[PERF][perf.isOn ? 0 : 1] + factors[PAX][pax.isOn ? 0 : 1]
+        return p + v + e
     }
     
     static func computeFlightRisk(_ score: Int) -> FlightRisk {
