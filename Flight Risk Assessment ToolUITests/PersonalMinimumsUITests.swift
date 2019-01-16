@@ -21,7 +21,7 @@ class PersonalMinimumsUITests: XCTestCase {
         XCUIApplication().launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
     }
     
     override func tearDown() {
@@ -30,7 +30,7 @@ class PersonalMinimumsUITests: XCTestCase {
     }
     
     func testLandscape() {
-        XCUIDevice.shared().orientation = .landscapeRight
+        XCUIDevice.shared.orientation = .landscapeRight
         
         let textField = XCUIApplication().children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element(boundBy: 8)
         
@@ -48,10 +48,10 @@ class PersonalMinimumsUITests: XCTestCase {
         ("runway length", "2400"), ("field elevation", "7500"), ("density altitude", "8000")]
         
         for (i, min) in mins.enumerated() {
-            let textField = element.children(matching: .textField).element(boundBy: UInt(i))
+            let textField = element.children(matching: .textField).element(boundBy: i)
             textField.tap()
             if let currString = textField.value as? String {
-                let deleteString = currString.map {_ in XCUIKeyboardKeyDelete}.joined(separator: "")
+                let deleteString = currString.map {_ in convertFromXCUIKeyboardKey(XCUIKeyboardKey.delete)}.joined(separator: "")
                 textField.typeText(deleteString)
             }
             textField.typeText(min.1)
@@ -60,7 +60,7 @@ class PersonalMinimumsUITests: XCTestCase {
         app/*@START_MENU_TOKEN@*/.keyboards.buttons["Done"]/*[[".keyboards.buttons[\"Done\"]",".buttons[\"Done\"]"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.tap()
         
         for (i, min) in mins.enumerated() {
-            let textField = element.children(matching: .textField).element(boundBy: UInt(i))
+            let textField = element.children(matching: .textField).element(boundBy: i)
             XCTAssertEqual(textField.value as? String, min.1, "\(min.0) not set to \(min.1)")
         }
      
@@ -72,8 +72,13 @@ class PersonalMinimumsUITests: XCTestCase {
         
         element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
         for (i, min) in mins.enumerated() {
-            let textField = element.children(matching: .textField).element(boundBy: (UInt(i)))
+            let textField = element.children(matching: .textField).element(boundBy: i)
             XCTAssertEqual(textField.value as? String, min.1, "\(min.0) not restored as \(min.1)")
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromXCUIKeyboardKey(_ input: XCUIKeyboardKey) -> String {
+	return input.rawValue
 }
