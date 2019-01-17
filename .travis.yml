@@ -1,6 +1,6 @@
 sudo: false
 language: objective-c
-osx_image: xcode9.1
+osx_image: xcode10.1
 xcode_project: Flight\ Risk\ Assessment\ Tool.xcodeproj # path to your xcodeproj folder
 script:
         - ./bin/testiphone.sh
